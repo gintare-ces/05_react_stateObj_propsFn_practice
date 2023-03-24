@@ -1,19 +1,14 @@
 import './style/reset.css';
 import './style/App.css';
 import UserForm from "./components/UserForm";
-import Card from './components/ui/card/Card';
-import Panel from './components/panel/Panel';
+import PanelList from './components/panel/PanelList';
 
 function App() {
   return (
     <div>
       <h1>New project</h1>
       {/* <UserForm /> */}
-      <Card>
-        <Panel ></Panel>
-        <Panel ></Panel>
-        <Panel ></Panel>
-      </Card>
+      <PanelList />
     </div>
   );
 }
