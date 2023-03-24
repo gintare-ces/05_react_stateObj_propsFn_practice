@@ -11,12 +11,14 @@ function UserForm() {
         height: '',
     })
     const [formSent, setFormSent] = useState(false)
+    const [currentStep, setCurrentStep] = useState(1)
 
     function handleFormSubmit(e) {
         // perimti formos valdyma ir neleisti perkrauti
         e.preventDefault()
         console.log('handleFormSubmit ===');
-        setFormSent(true)
+        setFormSent(true);
+        setCurrentStep(2)
     }
 
     // function handleFirstNameInput(e) {
@@ -44,7 +46,7 @@ function UserForm() {
   return (
     <div>
         <h2>UserForm</h2>
-        {!formSent && (
+        {currentStep === 1 && (
         <form onSubmit={handleFormSubmit}>
             <input value={inputs.firstName} onChange={handleInput} type="text" name="firstName" placeholder="First Name" />
             <input value={inputs.lastName} onChange={handleInput} type="text" name="lastName" placeholder="Last Name" />
@@ -54,7 +56,7 @@ function UserForm() {
             <Btn submit >Add</Btn>
         </form>
         )}
-        {formSent && (
+        {currentStep === 2 && (
         <div className="formSuccess">
         <h2>Patikrinkite duomenis</h2>
         <p>
@@ -64,11 +66,11 @@ function UserForm() {
             Age: <span>{inputs.age}</span> <br />
             Height: <span>{inputs.height}</span>
             </p>
-            <Btn onClick={() => setFormSent(false)}>Go back</Btn>
-            <Btn>Siusti</Btn>
+            <Btn onClick={() => setCurrentStep(1)}>Go back</Btn>
+            <Btn onClick={() => setCurrentStep(3)}>Siusti</Btn>
         </div>
         )}
-        {/* <div>Forma issiusta</div> */}
+        {currentStep === 3 && <div>Forma issiusta</div>}
     </div>
   )
 }
