@@ -1,7 +1,10 @@
 import React from 'react'
 
 function Btn(props) {
-  return <button onClick={props.onClick}>{props.children}</button>
+  return (
+  <button type={props.submit && 'submit'} className={props.className} onClick={props.onClick}>{props.children}
+  </button>
+  )
 }
 
 export default Btn
