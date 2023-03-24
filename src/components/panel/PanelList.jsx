@@ -8,9 +8,9 @@ function PanelList() {
 
   return (
     <Card>
-        <Panel showText={currentOpenPanelIndex === 1}></Panel>
-        <Panel showText={currentOpenPanelIndex === 2}></Panel>
-        <Panel showText={currentOpenPanelIndex === 3}></Panel>
+        <Panel title='Html' opentCurrentPanel={() => setCurrentOpenPanelIndex(1)} showText={currentOpenPanelIndex === 1}>Htmml is the structure of the web</Panel>
+        <Panel title='Css' opentCurrentPanel={() => setCurrentOpenPanelIndex(2)} showText={currentOpenPanelIndex === 2}>Css is the design, and how it looks</Panel>
+        <Panel opentCurrentPanel={() => setCurrentOpenPanelIndex(3)} showText={currentOpenPanelIndex === 3}></Panel>
     </Card>
   )
 }

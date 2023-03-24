@@ -7,6 +7,7 @@ function Panel(props) {
 
     function openPanel() {
         // setShowText(!showText)
+        props.openCurrentPanel()
     }
   return (
     <Card>
