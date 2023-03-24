@@ -2,13 +2,14 @@ import './style/reset.css';
 import './style/App.css';
 import UserForm from "./components/UserForm";
 import PanelList from './components/panel/PanelList';
+import {initPanelsData} from './assets/data';
 
 function App() {
   return (
-    <div>
-      <h1>New project</h1>
+    <div className='container'>
+      <h1>Forms Objects</h1>
       {/* <UserForm /> */}
-      <PanelList />
+      <PanelList list={initPanelsData}/>
     </div>
   );
 }

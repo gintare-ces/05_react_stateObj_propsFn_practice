@@ -11,11 +11,9 @@ function Panel(props) {
     }
   return (
     <Card>
-        <h3 style={{fontSize: '1.8rem'}} onClick={openPanel}>title</h3>
-        <button onClick={openPanel}>show</button>
-        {props.showText && (
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt eius esse numquam, delectus deleniti natus?</p>
-        )}
+        <h3 style={{fontSize: '1.8rem'}} onClick={openPanel}>{props.title}</h3>
+        {!props.showText && <button onClick={openPanel}>show</button>}
+        {props.showText && (<p>{props.children}</p>)}
     </Card>
   )
 }
